@@ -8,7 +8,7 @@ class Preprocessing():
 
     def __init__(self, text = str()):
         self.text = text
-        self.sentences = self.text.split("." or "?" or "!")
+        self.sentences = self.text.split(".")
 
 
     def get_tokens(self):
@@ -17,5 +17,5 @@ class Preprocessing():
 
     def morph_analyzer(self):
         #for word in self.tokens:
-        print(self.sentences)
+        return self.sentences
 

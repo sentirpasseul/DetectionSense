@@ -1,15 +1,22 @@
 from engine.text import Text
-from engine.preprocessing import Preprocessing
+from engine.processing import Preprocessing
+
+class Main():
+
+    def __init__(self):
+        self.input_text = input("Введите текст: ")
+        self.preproc = Preprocessing(self.input_text)
+
+    def main(self):
 
 
-def main():
-    input_text = input("Введите текст: ")
-    tokens = Preprocessing(input_text).get_tokens()
-    print(tokens)
+        tokens = self.preproc.get_tokens()
+        print("Токенизация: ",tokens)
 
-    #morph_analyzer = Preprocessing(i)
+        morph_analyzer = self.preproc.morph_analyzer()
+        print("Морфологический анализ: ",morph_analyzer)
 
 
 if __name__ == '__main__':
-    main()
+    Main().main()
 
