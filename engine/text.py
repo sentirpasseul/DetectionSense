@@ -4,9 +4,14 @@ from preprocessing import Preprocessing
 
 class Text():
 
-    def __init__(self):
-        self.input_text = input()
+    def __init__(self, text):
+        self.input_text = text
 
 
-    def get_text(self):
-        self.text_preproc = Preprocessing
+    def tokenize_text(self):
+        self.get_tokens = Preprocessing(self.input_text).get_tokens()
+        return self.get_tokens
+
+
+
+

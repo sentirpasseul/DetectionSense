@@ -1,12 +1,21 @@
 import nltk
 import textblob
+from pymorphy2 import MorphAnalyzer
+morph = MorphAnalyzer()
 
 
 class Preprocessing():
 
-    def __init__(self, text):
+    def __init__(self, text = str()):
         self.text = text
+        self.sentences = self.text.split("." or "?" or "!")
 
 
     def get_tokens(self):
-        tokens = nltk.word_tokenize(self.text)
+        self.tokens = nltk.word_tokenize(self.text)
+        return self.tokens
+
+    def morph_analyzer(self):
+        #for word in self.tokens:
+        print(self.sentences)
+
